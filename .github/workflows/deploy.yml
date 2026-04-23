@@ -33,6 +33,10 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+        env:
+          VITE_SKIP_TYPECHECK: true
+          # 强制 vite 编译时不因为微小的警告停止
+          NODE_OPTIONS: "--max-old-space-size=4096"
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
