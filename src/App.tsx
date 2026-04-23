@@ -130,8 +130,13 @@ const SpotDrawer = ({ spot, onClose, onVisit }: { spot: Spot | null, onClose: ()
       </div>
 
       <div className="p-6 space-y-6">
-        <div className="relative rounded-2xl overflow-hidden aspect-[16/9]">
-          <img src={spot.image} alt={spot.name} className="w-full h-full object-cover" />
+        <div className="relative rounded-2xl overflow-hidden aspect-[16/9] bg-heritage-ink/5">
+          <img 
+            src={spot.image} 
+            alt={spot.name} 
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover" 
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 text-white flex items-center gap-2">
             <Camera className="w-4 h-4" />
@@ -405,9 +410,14 @@ export default function App() {
             <section className="space-y-3">
               <h3 className="text-sm font-bold uppercase tracking-widest text-heritage-ink/40">Recent Highlights</h3>
               <div className="grid grid-cols-2 gap-4">
-                 {[1, 2].map(i => (
-                   <div key={i} className="aspect-square rounded-2xl bg-white border border-heritage-ink/5 overflow-hidden relative group">
-                      <img src={SPOTS[i].image} alt="pic" className="w-full h-full object-cover" />
+                 {[0, 3].map(i => (
+                   <div key={i} className="aspect-square rounded-2xl bg-heritage-ink/5 border border-heritage-ink/5 overflow-hidden relative group">
+                      <img 
+                        src={SPOTS[i].image} 
+                        alt="pic" 
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-cover" 
+                      />
                       <div className="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors" />
                       <Star className="absolute top-2 right-2 w-4 h-4 text-white fill-white" />
                    </div>
