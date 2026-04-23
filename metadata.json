@@ -1,0 +1,8 @@
+{
+  "name": "Maple Bridge Heritage Guide",
+  "description": "A mobile-first interactive guide for exploring the history, poetry, and culture of the Fengqiao (Maple Bridge) heritage site.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
